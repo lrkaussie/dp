@@ -20,7 +20,7 @@ Before do|scenario|
 begin
 
 
-  @browser = Watir::Browser.new :ff
+  @browser = Watir::Browser.new :ff, :profile => 'default'
   @browser.window.maximize
 
   @browser.driver.manage.timeouts.implicit_wait = 300
@@ -59,7 +59,7 @@ end
 
 After  do
 
-  @browser.close
+  #@browser.close
 
 end
 

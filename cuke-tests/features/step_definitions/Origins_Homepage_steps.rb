@@ -64,5 +64,13 @@ Then(/^I click on the product$/) do
 end                                                                          
                                                                              
 Then(/^I should be redirected to the "([^"]*)" product page$/) do |arg1|     
-  pending # Write code here that turns the phrase above into concrete actions
+  on(Origins_homepage).display_product_page
+end
+
+When(/^I click on the Terms & Conditions footer link$/) do 
+  on(Origins_homepage).footer_link_click
+end
+
+Then(/^I navigate to the Terms & Conditions page$/) do
+  on(Origins_homepage).footer_link_page
 end                                                                          

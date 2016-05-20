@@ -11,6 +11,7 @@ class Origins_homepage
 	def check_page_load
 	@ready= @browser.ready_state.eql? "complete"
 		if (@ready ==true)
+		sleep(1)
 		puts "Page is loaded"		
 		end
 	end	
@@ -72,6 +73,22 @@ class Origins_homepage
 		@product_url= @browser.element(:css =>'#perlgem-search-form > div.gnav-search__suggestions-wrapper > div > div > div > div > div.product-grid__item.js-grid-item.js-product-grid-item.first > div > a').value
 		puts(@product_url)
 		Watir::Wait.until {@browser.element(:css =>'#perlgem-search-form > div.gnav-search__suggestions-wrapper > div > div > div > div > div.product-grid__item.js-grid-item.js-product-grid-item.first > div')}.when_present.click
+	end
+
+	def display_product_page
+			if (@browser.url == "http://www.origins.com/product/15374/12194/makeup/lips/Flower-Fusion/Hydrating-Lip-Color-with-Floral-Extracts-in-20-Shades")
+			puts("Correct search product result page is displayed ")	
+			end
+	end
+
+	def footer_link_click
+		Watir::Wait.until {@browser.link(:css =>'body > div.page-wrapper > footer > div.page-footer__secondary > div.block.block-nodeblock.block-nodeblock-96.block-template-gnav-country-chooser-v1.block-template-basic-menuref-v1.block-template-basic-v1 > div > div > div.menuref > div > article > div > div > div > ul > li.last.leaf.menu__item.menu__item--lvl-1 > a')}.when_present.click			
+	end
+
+	def footer_link_page
+		if (@browser.url == "http://www.origins.com/customer-service-terms-conditions")
+			puts("Terms and Conditions page is loaded")	
+			end	
 	end	
 
 end

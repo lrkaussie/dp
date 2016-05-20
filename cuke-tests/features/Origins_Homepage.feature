@@ -1,7 +1,5 @@
-Feature: Origins HomePage Scenario
-     In order to check whether the homepage loads
-     As a end-user
-     I want to see that the homepage loads
+Feature: Origins HomePage Sanity Test Case Scenarios
+     As a tester I want to check whether the sanity test cases for Origins Homepage work as expected
    
 @elements
 Scenario: Homepage browse and check all elements loaded
@@ -30,4 +28,12 @@ Scenario: User can search for a product from homepage
     And I search for the keyword "lipstick"
     Then I should see autosuggested products
     And I click on the product
-    #Then I should be redirected to the "lipstick" product page
+    Then I should be redirected to the "lipstick" product page
+
+@footer
+Scenario: User can go to any footer page from homepage
+    Given I am on the Origins Home Page
+    And I close the sign up box
+    Then I can see that all the elements are loaded on the page
+    When I click on the Terms & Conditions footer link
+    Then I navigate to the Terms & Conditions page 
