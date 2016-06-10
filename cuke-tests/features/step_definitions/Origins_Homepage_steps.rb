@@ -73,4 +73,16 @@ end
 
 Then(/^I navigate to the Terms & Conditions page$/) do
   on(Origins_homepage).footer_link_page
-end                                                                          
+end
+
+Then(/^I check the ratings for the product$/) do                             
+  on(Origins_homepage).check_ratings
+end
+
+Then(/^I select poppy shade$/) do
+  on(Origins_homepage).select_shade
+end
+
+Then(/^I see poppy shade selected$/) do
+  on(Origins_homepage).shade_confirm
+end                                                                                                                                                    

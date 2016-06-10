@@ -7,7 +7,7 @@ When(/^I click on Login in button$/) do
 end
 
 And(/^I enter User name for the Drupal login to Origin$/) do
-  on(Origins_drupal_page).enter_username 'TestEditorApproverPublisher'
+  on(Origins_drupal_page).enter_username 'Test Content Editor'
 end
 
 And(/^I enter password for the Drupal login to Origin$/) do
