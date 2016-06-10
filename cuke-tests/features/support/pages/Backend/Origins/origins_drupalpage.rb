@@ -55,4 +55,24 @@ def configuration_validation
 	Watir::Wait.until {@browser.element(:class =>'page-title').text.include?("Configuration")}.should==true
 end
 
+def click_page_create
+	Watir::Wait.until {@browser.element(:xpath=>'//*[@id="block-system-main"]/div/ul/li[9]/span/a')}.when_present.click
+end
+
+def create_page_validation
+	Watir::Wait.until {@browser.element(:class =>'page-title').text.include?("Create Page")}.should==true
+end
+
+def click_expand_add_item
+	Watir::Wait.until {@browser.element(:xpath=>'//*[@id="edit-field-content-und-0"]/legend/span/a')}.when_present.click
+end
+
+def click_drop_down_layout
+	Watir::Wait.until {@browser.element(:xpath=>'//*[@id="edit-field-content-und-0-template-name"]')}.when_present.click
+end
+
+def select_layout_template(temp_value)
+	Watir::Wait.until {@browser.select_list(:xpath=>'//*[@id="edit-field-content-und-0-template-name"]')}.when_present.select_value(temp_value)
+end
+
 end

@@ -28,4 +28,6 @@ end
                                                                              
 Then(/^I can see the Configuration page loaded correctly$/) do               
   on(Origins_drupal_page).configuration_validation
-end                                                                          
+end
+
+                                                                         

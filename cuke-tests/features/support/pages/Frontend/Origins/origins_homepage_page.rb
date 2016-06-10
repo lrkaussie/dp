@@ -89,6 +89,17 @@ class Origins_homepage
 		if (@browser.url == "http://www.origins.com/customer-service-terms-conditions")
 			puts("Terms and Conditions page is loaded")	
 			end	
-	end	
+	end
 
+	def check_ratings
+		Watir::Wait.until {@browser.element(:id =>'BVSearchID').exists?}.should==true
+	end
+
+	def select_shade
+		Watir::Wait.until {@browser.link(:xpath=>'/html/body/div[3]/div[1]/div/div[3]/div/div/article/div/div/div[1]/div/div[4]/div[3]/div/div[1]/div[2]/div[1]/div/div[3]/a[21]')}.when_present.click
+	end
+
+	def shade_confirm
+		#code goes here
+	end
 end
